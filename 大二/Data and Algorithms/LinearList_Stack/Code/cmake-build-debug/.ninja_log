@@ -1,0 +1,5 @@
+# ninja log v6
+0	18	1741681846855823979	build.ninja	99d158fed552582d
+1	13	1741681841583091158	CMakeFiles/Code.dir/Application_of_stacks.cpp.o	c9f352166855bbe
+1	271	1741682034006086467	CMakeFiles/Code.dir/Application_of_stacks.cpp.o	c9f352166855bbe
+272	302	1741682034274104186	Code	43ff1d61dbed2b08
