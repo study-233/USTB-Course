@@ -3,4 +3,4 @@ project(Code)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Code Application_of_stacks.cpp)
+#add_executable(Code Application_of_stacks.cpp)
