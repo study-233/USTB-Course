@@ -4,15 +4,12 @@ import sys
 import locale
 import platform
 import os
-from matplotlib import font_manager  # 用于注册字体
-
-# 尝试设置区域
 
 locale.setlocale(locale.LC_ALL, '')  # 使用默认
 
 # 设置屏幕和画笔
 screen = turtle.Screen()
-screen.setup(1000, 1400)  # 增加画布尺寸以获得更大视图
+screen.setup(1000, 1200)  # 增加画布尺寸以获得更大视图
 screen.bgcolor("sky blue")
 screen.title("春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。 —— 孟浩然《春晓》")
 
@@ -21,46 +18,10 @@ t = turtle.Turtle()
 t.speed(0)  # 最快速度
 t.hideturtle()
 
-# 注册本地字体
-def setup_font():
-    # 字体文件路径
-    font_path = "SimHei.ttf"  # 假设字体文件在同一目录
-    
-    # 检查字体文件是否存在
-    if os.path.exists(font_path):
-        print(f"找到字体文件: {font_path}")
-        # 注册字体
-        try:
-            font_manager.fontManager.addfont(font_path)
-            return "SimHei"  # 返回字体名称
-        except Exception as e:
-            print(f"注册字体失败: {e}")
-    else:
-        print(f"字体文件不存在: {font_path}")
-        
-    # 如果注册失败或文件不存在，返回系统字体
-    return get_chinese_font()
 
 # 使用设置好的字体
-chinese_font = setup_font()
-default_font = (chinese_font, 20, "normal")  # 增大字体大小
-title_font = (chinese_font, 30, "bold")
-
-# 根据操作系统选择合适的中文字体
-def get_chinese_font():
-    print("操作系统：", platform.system())
-    system = platform.system()
-    if system == 'Windows':
-        return 'SimHei'  # 黑体，Windows中文字体
-    elif system == 'Darwin':
-        return 'PingFang SC'  # macOS中文字体
-    else:
-        return 'WenQuanYi Zen Hei'  # Linux中文字体
-
-# 定义通用字体 - 使用中文友好字体
-chinese_font = get_chinese_font()
-default_font = (chinese_font, 15, "normal")  # 使用中文字体
-title_font = (chinese_font, 30, "bold")      # 使用中文字体
+default_font = ("SimHei", 20, "normal")  # 增大字体大小
+title_font = ("SimHei", 30, "bold")
 
 # 绘制区域分隔线
 def draw_grid():
@@ -72,14 +33,14 @@ def draw_grid():
     t.goto(0, 500)  # 扩大垂直线的范围
     t.setheading(270)  # 向下
     t.pendown()
-    t.forward(1000)  # 墛加线长
+    t.forward(1000)  
     
     # 绘制水平线
     t.penup()
     t.goto(-500, 0)  # 扩大水平线的范围
     t.setheading(0)  # 向右
     t.pendown()
-    t.forward(1000)  # 墛加线长  # 修正"墛加"为"增加"
+    t.forward(1000)  
     t.penup()
 
 # 辅助函数
@@ -190,7 +151,7 @@ def scene1():
     """春眠不觉晓 - 春天睡觉，不知不觉天亮了"""
     x_offset = -250  # 左上角中心点x坐标，向左增大区域
     y_offset = 250   # 左上角中心点y坐标，向上增大区域
-    scale = 1.0      # 墛加缩放比例，画面更大
+    scale = 1.0      # 缩放比例，画面更大
     
     # 绘制背景
     t.penup()
@@ -199,7 +160,7 @@ def scene1():
     t.color("light blue")
     t.begin_fill()
     for _ in range(4):
-        t.forward(500)  # 墛加背景大小
+        t.forward(500)  # 背景大小
         t.right(90)
     t.end_fill()
     
@@ -285,7 +246,7 @@ def scene3():
     x_center = (left_edge + right_edge) / 2  # -250
     y_center = (bottom_edge + top_edge) / 2  # -250
     
-    scale = 1.0  # 墛加缩放比例  # 修正"墛加"为"增加"
+    scale = 1.0  
     
     # 绘制背景 - 确保填充整个左下区域
     t.penup()
@@ -300,7 +261,7 @@ def scene3():
     t.end_fill()
     
     # 绘制地面 - 地面在区域底部
-    ground_height = int(120 * scale)  # 墛加地面高度  # 修正"墛加"为"增加"
+    ground_height = int(120 * scale)  
     t.penup()
     t.goto(left_edge, bottom_edge)  # 区域左下角
     t.pendown()
@@ -554,19 +515,7 @@ def scene4():
 
 # 写诗标题
 def write_poem_title():
-    # 添加背景
-    t.penup()
-    t.goto(-250, 500)  # 调整位置，与扩大的网格一致
-    t.pendown()
-    t.color("white")
-    t.begin_fill()
-    for _ in range(2):
-        t.forward(500)  # 墛加背景宽度  # 修正"墛加"为"增加"
-        t.right(90)
-        t.forward(70)   # 墛加背景高度  # 修正"墛加"为"增加"
-        t.right(90)
-    t.end_fill()
-    
+
     # 写文字
     t.penup()
     t.goto(0, 550)  # 调整y坐标到背景中央
