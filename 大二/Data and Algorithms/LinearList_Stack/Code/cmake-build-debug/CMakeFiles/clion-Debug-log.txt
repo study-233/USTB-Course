@@ -1,4 +1,15 @@
-/home/andy/CLion-2024.3.4/clion-2024.3.4/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/andy/CLion-2024.3.4/clion-2024.3.4/bin/ninja/linux/x64/ninja -G Ninja -S "/home/andy/USTB-Course/大二/Data and Algorithms/LinearList_Stack/Code" -B "/home/andy/USTB-Course/大二/Data and Algorithms/LinearList_Stack/Code/cmake-build-debug"
--- Configuring done (0.1s)
--- Generating done (0.0s)
--- Build files have been written to: /home/andy/USTB-Course/大二/Data and Algorithms/LinearList_Stack/Code/cmake-build-debug
+"D:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "E:\USTB-Course\大二\Data and Algorithms\LinearList_Stack\Code" -B "E:\USTB-Course\大二\Data and Algorithms\LinearList_Stack\Code\cmake-build-debug"
+CMake Deprecation Warning:
+  Support for "Extra Generators" like
+
+    CodeBlocks
+
+  is deprecated and will be removed from a future version of CMake.  IDEs may
+  use the cmake-file-api(7) to view CMake-generated project build trees.
+
+
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.30 or higher is required.  You are running version 3.28.1
+
+
+-- Configuring incomplete, errors occurred!

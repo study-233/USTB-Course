@@ -11,7 +11,7 @@ int main() {
     int n;
     cin >> n;
 
-    // 生成斐波那契数列，直到超过n
+    // 生成斐波那契数列，直到超过 n
     vector<int> fib = {1, 2};
     while (true) {
         int next = fib.back() + fib[fib.size()-2];
@@ -35,12 +35,12 @@ int main() {
         }
     }
 
-    // 生成二进制编码并添加终止符'1'
+    // 生成二进制编码并添加终止符 1
     string code;
     for (bool used : selected) {
         code += used ? '1' : '0';
     }
-    code += '1'; // 终止符确保编码唯一性
+    code += '1'; // 添加终止符 1
 
     cout << code << endl;
     return 0;
