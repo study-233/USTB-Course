@@ -1,50 +1,43 @@
 import turtle
 import random
-import sys
 import locale
-import platform
-import os
-import math  # 添加这一行导入math模块
 
-locale.setlocale(locale.LC_ALL, '')  # 使用默认
+locale.setlocale(locale.LC_ALL, '')  # 设置为系统默认语言环境
 
 # 设置屏幕和画笔
 screen = turtle.Screen()
-screen.setup(1400, 1400)  # 增加画布尺寸以获得更大视图
-screen.bgcolor("sky blue")
-screen.title("春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。 —— 孟浩然《春晓》")
+screen.setup(1400, 1400)  # 设置画布尺寸
+screen.bgcolor("sky blue")  # 背景颜色
+screen.title("春晓 - 孟浩然")  # 标题
 
 # 创建画笔
 t = turtle.Turtle()
-t.speed(0)  # 最快速度
-t.hideturtle()
+t.speed(0)  # 设置最快速度
+t.hideturtle()  # 隐藏画笔
 
+# 字体设置
+default_font = ("SimHei", 20, "normal")  # 默认字体
+title_font = ("SimHei", 30, "bold")  # 标题字体
 
-# 使用设置好的字体
-default_font = ("SimHei", 20, "normal")  # 墛加字体大小
-title_font = ("SimHei", 30, "bold")
-
-# 绘制区域分隔线
+# 绘制网格线，用于分隔四个场景
 def draw_grid():
     t.penup()
-    t.pensize(4)  # 加粗分隔线
+    t.pensize(4)  # 设置线条粗细
     t.color("black")
-    
     # 绘制垂直线
-    t.goto(0, 500)  # 扩大垂直线的范围
+    t.goto(0, 500)
     t.setheading(270)  # 向下
     t.pendown()
-    t.forward(1000)  
-    
+    t.forward(1000)
     # 绘制水平线
     t.penup()
-    t.goto(-500, 0)  # 扩大水平线的范围
+    t.goto(-500, 0)
     t.setheading(0)  # 向右
     t.pendown()
-    t.forward(1000)  
+    t.forward(1000)
     t.penup()
 
-# 辅助函数
+# 辅助函数：绘制地面、山、树、花瓣、鸟等
 
 # 绘制大地
 def draw_ground(x_offset, y_offset, scale=1.0):
@@ -148,9 +141,9 @@ def draw_bird(x, y, scale=1.0):
         t.right(90)
     t.end_fill()
 
-# 创建四个场景函数，对应诗的四句
+# 场景1：春眠不觉晓
 def scene1():
-    """春眠不觉晓 - 春天睡觉，不知不觉天亮了"""
+    """绘制左上角场景：春天的早晨"""
     # 定义左上区域的边界
     left_edge = -500
     right_edge = 0
@@ -294,7 +287,7 @@ def scene1():
             t.circle(3 * scale)
             t.end_fill()
     
-    # 添加一个窗户，里面有个人影(表示睡觉的人)
+    # 添加一个窗户
     window_width = 15 * scale
     window_height = 20 * scale
     window_x = house_x + 10 * scale
@@ -339,37 +332,12 @@ def scene1():
     t.forward(window_height)
     t.pensize(1)
     
-    # 人影(睡觉的人)
-    t.penup()
-    t.goto(window_x + window_width/4, window_y + window_height/3)
-    t.pendown()
-    t.color("dark gray")
-    t.begin_fill()
-    t.circle(5 * scale)  # 头部
-    t.end_fill()
-    
-    # 身体(被子) 
-    t.penup()
-    t.goto(window_x + window_width/5, window_y + window_height/3)
-    t.pendown()
-    t.begin_fill()
-    t.setheading(0)
-    t.forward(window_width * 0.6)
-    t.right(90)
-    t.forward(window_height * 0.3)
-    t.right(90)
-    t.forward(window_width * 0.6)
-    t.right(90)
-    t.forward(window_height * 0.3)
-    t.end_fill()
-    
     # 添加几只早起的小鸟，表示天亮了但人还在睡
     for _ in range(3):
         bird_x = random.randint(int(x_center - 150), int(x_center + 100))
         bird_y = random.randint(int(y_center + 50), int(y_center + 150))
         draw_bird(bird_x, bird_y, scale * 0.6)
     
-    # 优化花朵 - 替换原来的花朵代码
     # 定义不同类型的花朵
     
     def draw_daisy(x, y, size):
@@ -540,8 +508,9 @@ def scene1():
     t.color("black")
     t.write("春眠不觉晓", align="center", font=default_font)
 
+# 场景2：处处闻啼鸟
 def scene2():
-    """处处闻啼鸟 - 处处都能听到鸟儿在鸣叫"""
+    """绘制右上角场景：鸟鸣的春天"""
     # 定义右上区域的边界
     left_edge = 0
     right_edge = 500
@@ -770,8 +739,9 @@ def scene2():
     t.color("black")
     t.write("处处闻啼鸟", align="center", font=default_font)
 
+# 场景3：夜来风雨声
 def scene3():
-    """夜来风雨声 - 夜晚伴随着风雨的声音"""
+    """绘制左下角场景：夜晚的风雨"""
     # 定义左下区域的边界
     left_edge = -500
     right_edge = 0
@@ -1086,8 +1056,9 @@ def scene3():
     t.color("white")
     t.write("夜来风雨声", align="center", font=default_font)
 
+# 场景4：花落知多少
 def scene4():
-    """花落知多少 - 不知道有多少花瓣落下了"""
+    """绘制右下角场景：落花的春天"""
     # 定义右下区域的边界
     left_edge = 0
     right_edge = 500
@@ -1328,9 +1299,7 @@ def scene4():
     t.circle(crown_radius)
     t.end_fill()
     
-    # 落花 - 删除这里的颜色定义，因为已经在前面定义过了
-    # petal_colors = ["pink", "light pink", "hot pink", "deep pink"]  # 删除此行
-    
+
     # 地面上的花瓣
     for _ in range(30):
         petal_x = random.randint(int(left_edge + 30), int(right_edge - 30))
@@ -1580,20 +1549,19 @@ def scene4():
 
 # 写诗标题
 def write_poem_title():
-
-    # 写文字
+    """在画布顶部写诗的标题"""
     t.penup()
-    t.goto(0, 550)  # 调整y坐标到背景中央
+    t.goto(0, 550)  # 标题位置
     t.color("black")
-    t.write("春晓 - 孟浩然", align="center", font=title_font)  # 修正字体设置
+    t.write("春晓 - 孟浩然", align="center", font=title_font)
 
-# 绘制整体画面 - 修改绘制顺序，先画标题和分隔线，再画场景
-write_poem_title()  # 先绘制标题
-draw_grid()         # 再绘制网格线
-scene1()
-scene2()
-scene3()
-scene4()
+# 绘制整体画面
+write_poem_title()  # 绘制标题
+draw_grid()         # 绘制分隔线
+scene1()            # 绘制场景1
+scene2()            # 绘制场景2
+scene3()            # 绘制场景3
+scene4()            # 绘制场景4
 
-# 保持画面显示直到手动关闭
-turtle.mainloop()  # 替换screen.exitonclick()，保持画面显示
+# 保持画面显示
+turtle.mainloop()  # 保持窗口打开
