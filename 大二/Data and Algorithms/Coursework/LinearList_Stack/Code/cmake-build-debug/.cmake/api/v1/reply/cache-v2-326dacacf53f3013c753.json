@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/LinearList_Stack/Code/cmake-build-debug"
+			"value" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/Coursework/LinearList_Stack/Code/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/LinearList_Stack/Code/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/Coursework/LinearList_Stack/Code/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/LinearList_Stack/Code"
+			"value" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/Coursework/LinearList_Stack/Code"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1151,7 +1151,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/LinearList_Stack/Code/cmake-build-debug"
+			"value" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/Coursework/LinearList_Stack/Code/cmake-build-debug"
 		},
 		{
 			"name" : "Code_IS_TOP_LEVEL",
@@ -1175,7 +1175,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/LinearList_Stack/Code"
+			"value" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/Coursework/LinearList_Stack/Code"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

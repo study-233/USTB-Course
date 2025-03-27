@@ -32,8 +32,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/LinearList_Stack/Code/cmake-build-debug",
-		"source" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/LinearList_Stack/Code"
+		"build" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/Coursework/LinearList_Stack/Code/cmake-build-debug",
+		"source" : "/home/andy/USTB-Course/\u5927\u4e8c/Data and Algorithms/Coursework/LinearList_Stack/Code"
 	},
 	"version" : 
 	{
